@@ -1,6 +1,9 @@
 window.addEventListener('load', () => {
   const items = document.querySelectorAll('.ytd-guide-section-renderer')
 
+  const locaiton = window.location
+  const isShortsPage = locaiton.href.includes('shorts')
+
   if (items) {
     Array.from(items).forEach((item) => {
       const child = item.querySelector('.ytd-guide-entry-renderer')
@@ -11,5 +14,9 @@ window.addEventListener('load', () => {
         }
       }
     })
+  }
+
+  if (isShortsPage) {
+    locaiton.replace('https://www.youtube.com')
   }
 })
